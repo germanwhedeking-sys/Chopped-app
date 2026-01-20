@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TruMingle - Authentic Connections</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-accent: #ff4d00;
+      --brand-black: #000000;
+      --brand-white: #ffffff;
+    }
+    body {
+      font-family: 'Calibri', 'Candara', 'Segoe UI', 'Optima', 'Arial', sans-serif;
+      background: var(--brand-white);
+      color: var(--brand-black);
+      margin: 0;
+      overflow: hidden;
+      height: 100vh;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-brand {
+      font-family: 'Bungee', cursive;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    .mesh-bg {
+      position: fixed;
+      inset: 0;
+      background-color: var(--brand-white);
+      background-image: 
+        radial-gradient(at 0% 0%, hsla(0, 0%, 98%, 1) 0, transparent 50%), 
+        radial-gradient(at 100% 100%, hsla(0, 0%, 94%, 1) 0, transparent 50%);
+      z-index: -1;
+    }
+
+    .grain::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://grainy-gradients.vercel.app/noise.svg');
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 50;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .brutalist-shadow {
+      box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+    }
+    .brutalist-shadow-sm {
+      box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+    }
+    .brutalist-button:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+    }
+
+    @keyframes heart-burst {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.5); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .animate-heart-burst {
+      animation: heart-burst 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes match-shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+    .animate-match-shake {
+      animation: match-shake 0.2s ease-in-out infinite;
+    }
+
+    .nav-transition {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="grain">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

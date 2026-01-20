@@ -1,0 +1,9 @@
+
+{
+  "name": "TruMingle",
+  "description": "Authentic connections for real people. No filters, no delusions, just genuine mingling for the down-to-earth world.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
